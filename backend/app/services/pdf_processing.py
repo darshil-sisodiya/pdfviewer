@@ -1,0 +1,11 @@
+from typing import List
+from pypdf import PdfReader
+
+
+def extract_text(file_path: str) -> List[str]:
+    reader = PdfReader(file_path)
+    pages = []
+    for page in reader.pages:
+        text = page.extract_text() or ""
+        pages.append(text)
+    return pages

@@ -1,0 +1,36 @@
+# Node
+node_modules/
+dist/
+.build/
+.tmp/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Build outputs
+frontend/.vite/
+frontend/build/
+frontend/coverage/
+backend/.pytest_cache/
+backend/.coverage
+backend/coverage/
