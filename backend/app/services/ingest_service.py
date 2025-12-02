@@ -25,9 +25,17 @@ class IngestService:
         chunk_meta: List[Dict[str, Any]] = []
 
         for i, page_text in enumerate(pages, start=1):
-            for ch in chunk_text(page_text):
+            # Skip empty pages early
+            if not page_text or not page_text.strip():
+                continue
+            for ch in chunk_text(page_text, max_chars=1000, overlap=100):
                 chunks_text.append(ch)
                 chunk_meta.append({"page": i})
+
+        # If too many chunks, cap to avoid memory blowup
+        if len(chunks_text) > 5000:
+            chunks_text = chunks_text[:5000]
+            chunk_meta = chunk_meta[:5000]
 
         vectors = self.embedder.embed(chunks_text)
 
