@@ -23,3 +23,17 @@ Clone the repository:
 ```bash
 git clone https://github.com/darshil-sisodiya/pdfviewer.git
 cd pdfviewer
+
+npm install
+
+npm start
+
+pdfviewer/
+├── src/
+│   ├── components/     # UI components
+│   ├── pages/          # Main views
+│   ├── utils/          # Helper functions
+│   └── App.js
+├── public/
+├── package.json
+└── README.md
