@@ -28,6 +28,8 @@ npm install
 
 npm start
 ```
+## Project Structure 
+```bash
 pdfviewer/
 ├── src/
 │   ├── components/     # UI components
@@ -37,3 +39,4 @@ pdfviewer/
 ├── public/
 ├── package.json
 └── README.md
+```
