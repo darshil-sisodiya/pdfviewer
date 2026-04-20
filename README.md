@@ -13,8 +13,7 @@ A fast and lightweight PDF viewer built for smooth rendering, clean UI, and simp
 
 ## 🚀 Tech Stack
 
-- Frontend: React / HTML / CSS / JavaScript  
-- PDF Rendering: PDF.js (or mention what you used)
+- React / HTML / CSS / JavaScript / LlamaIndex / Gemini API/ postgresql
 
 ## 📦 Installation
 
