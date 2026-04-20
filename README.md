@@ -1,4 +1,4 @@
-# PDFLens
+# PaperSight
 
 A fast and lightweight PDF viewer built for smooth rendering, clean UI, and simple document interaction.
 
