@@ -51,11 +51,28 @@ npm run dev
 ```
 
 ## Structure
-```
-backend/   FastAPI + RAG + DB  
-frontend/  React + PDF.js  
-infra/     Docker setup  
-docs/      Architecture + API  
+```bash
+├── backend/        # FastAPI backend, LlamaIndex, DB logic
+│   ├── app/        # Core application code
+│   ├── models/     # DB models
+│   ├── services/   # Business logic
+│   └── requirements.txt
+│
+├── frontend/       # React + Vite + PDF.js UI
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── utils/
+│   └── package.json
+│
+├── infra/          # Docker + database setup
+│   └── docker-compose.yml
+│
+├── docs/           # Architecture and API docs
+│   ├── architecture.md
+│   └── api.md
+│
+└── README.md
 ```
 
 ## Flow
