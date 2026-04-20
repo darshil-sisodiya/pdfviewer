@@ -13,7 +13,7 @@ A fast and lightweight PDF viewer built for smooth rendering, clean UI, and simp
 
 ## 🚀 Tech Stack
 
-- React / HTML / CSS / JavaScript / LlamaIndex / Gemini API/ postgresql
+- React + Vite / LlamaIndex / Gemini API/ Postgresql 
 
 ## 📦 Installation
 
