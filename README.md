@@ -1,39 +1,72 @@
-# PaperSight
+# PDFSense AI
 
-A fast and lightweight PDF viewer built for smooth rendering, clean UI, and simple document interaction.
+An AI-powered PDF reader that lets you read, highlight, search, and chat with documents using RAG, semantic search, and Gemini-powered insights.
 
-## ✨ Features
+## Features
+- Smooth PDF viewing (PDF.js)
+- Text highlighting and selection
+- Chat with PDF (RAG)
+- Semantic search using pgvector
+- Context-aware explanations
+- Gemini-powered insights and summaries
 
-- 📄 View PDF documents seamlessly
-- ⚡ Fast loading and rendering
-- 🔍 Zoom in/out support
-- 📱 Responsive design (works across devices)
-- 🧭 Easy navigation between pages
-- 🎯 Minimal and clean user interface
+## Tech Stack
+Backend: FastAPI, LlamaIndex, PostgreSQL + pgvector, Gemini API  
+Frontend: React (Vite), PDF.js  
+Infra: Docker Compose  
 
-## 🚀 Tech Stack
+## Installation
 
-### React + Vite / LlamaIndex / Gemini API / Postgresql 
-
-## 📦 Installation
-
-```bash
+Clone the repository:
 git clone https://github.com/darshil-sisodiya/pdfviewer.git
 cd pdfviewer
 
-npm install
+Setup environment variables:
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 
-npm start
-```
-## Project Structure 
-```bash
-pdfviewer/
-├── src/
-│   ├── components/     # UI components
-│   ├── pages/          # Main views
-│   ├── utils/          # Helper functions
-│   └── App.js
-├── public/
-├── package.json
+Fill in required values (DB, API keys, etc.)
+
+Run with Docker:
+docker compose -f infra/docker-compose.yml up -d
+
+OR run locally:
+
+Backend:
+cd backend
+python -m venv venv
+source venv/bin/activate   (Windows: venv\Scripts\activate)
+pip install -r requirements.txt
+uvicorn app:app --reload
+
+Frontend:
+cd frontend
+npm install
+npm run dev
+
+## Folder Structure
+
+.
+├── backend/        # FastAPI + LlamaIndex + DB logic
+├── frontend/       # React + PDF.js UI
+├── infra/          # Docker setup
+├── docs/           # Architecture + API docs
 └── README.md
-```
+
+## How It Works
+
+1. PDFs are parsed and chunked using LlamaIndex  
+2. Embeddings stored in PostgreSQL (pgvector)  
+3. Queries use semantic retrieval (RAG)  
+4. Gemini generates final responses  
+
+## Future Improvements
+- Annotations
+- Multi-document chat
+- User auth
+- Export insights
+
+## License
+MIT
+
+Built by Darshil
